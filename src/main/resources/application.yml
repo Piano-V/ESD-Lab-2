@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/esd_lab2
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: ${JWT_SECRET}          # Base64-encoded, at least 32 bytes — set via env variable
+  expiration-seconds: 900
+
+admin:
+  email: admin@esd.local
+  password: ${ADMIN_PASSWORD}    # Set via env variable — never hardcode
